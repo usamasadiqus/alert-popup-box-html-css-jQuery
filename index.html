@@ -7,6 +7,37 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- Custom jQuery -->
+    <script>
+      $(document).ready(function () {
+        $(".click").click(function () {
+          $(".popup_box").css({
+            opacity: "1",
+            "pointer-events": "auto",
+          });
+        });
+        $(".btn1").click(function () {
+          $(".popup_box").css({
+            opacity: "0",
+            "pointer-events": "none",
+          });
+        });
+        $(".btn2").click(function () {
+          $(".popup_box").css({
+            opacity: "0",
+            "pointer-events": "none",
+          });
+          $(".click").text("Account Deleted");
+          setTimeout(function () {
+            $(".click").text("Click Me");
+          }, 1000);
+        });
+      });
+    </script>
   </head>
   <body>
     <a href="#" class="click">Click Me</a>
@@ -21,7 +52,7 @@
       </div>
     </div>
 
-    <!-- Fonts - Font Awesome -->
+    <!-- Fonts - Font Awesome CDN -->
     <script
       src="https://kit.fontawesome.com/2c339b9814.js"
       crossorigin="anonymous"
